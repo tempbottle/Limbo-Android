@@ -2,7 +2,7 @@
 # This is the only part of the file you need to change before when compiling.
 
 #PLATFORM
-NDK_ROOT = /home/dev/tools/android-ndk-r8e
+NDK_ROOT = /home/nic/opt/android-ndk-r9d
 NDK_PLATFORM = platforms/android-14
 
 # ANDROID DEVICE CONFIGURATION
@@ -45,7 +45,7 @@ else ifeq ($(APP_ABI),x86)
     TARGET_ARCH=x86
 endif
 
-TOOLCHAIN_DIR = $(NDK_ROOT)/toolchains/$(EABI)/prebuilt/linux-x86
+TOOLCHAIN_DIR = $(NDK_ROOT)/toolchains/$(EABI)/prebuilt/linux-x86_64
 TOOLCHAIN_PREFIX := $(TOOLCHAIN_DIR)/bin/$(TOOLCHAIN_PREFIX)
 
 # ANDROID NDK TOOLCHAIN, doesn't support hard float so it's slow
@@ -78,5 +78,5 @@ SYSTEM_INCLUDE = \
     -I$(NDK_INCLUDE) \
     -include $(LIMBO_JNI_ROOT)/logutils.h
 
-
+APP_CFLAGS += -Wno-error=format-security
 
