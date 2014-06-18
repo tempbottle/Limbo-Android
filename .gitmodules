@@ -1,0 +1,3 @@
+[submodule "jni/qemu"]
+	path = jni/qemu
+	url = git@github.com:ncornette/qemu.git
